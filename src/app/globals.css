@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 95%;
+    --foreground: 222 47% 11%;
+    --card: 220 13% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 220 13% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 202 80% 58%;
+    /* A vibrant, but muted, sky blue (#6FB5DA) */
+    --primary-foreground: 210 40% 98%;
+    --brand-blue: 202 80% 58%;
+    --brand-purple: 260 90% 65%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 13% 91%;
+    /* Light gray for hover */
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 142.1 76.2% 96.3%;
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 47.9 95.8% 3.1%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 202 80% 58%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 220 13% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 202 58% 64%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 220 13% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 88%;
+    --sidebar-ring: 202 58% 64%;
+    --chat-user: 212 100% 50%;
+    /* #007bff */
+    --chat-user-light: 212 100% 50% / 0.1;
+    --chat-user-dark: 212 100% 50% / 0.2;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 202 80% 58%;
+    --primary-foreground: 210 40% 98%;
+    --brand-blue: 202 80% 58%;
+    --brand-purple: 260 90% 65%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 222 47% 18%;
+    /* Dark gray for hover */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 70.2% 26.3%;
+    --success-foreground: 142.1 70.2% 86.3%;
+    --warning: 47.9 90.8% 43.1%;
+    --warning-foreground: 47.9 90.8% 3.1%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 202 80% 58%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 202 58% 64%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 202 58% 64%;
+    --chat-user: 212 100% 50%;
+    --chat-user-light: 212 100% 95% / 0.1;
+    --chat-user-dark: 212 100% 95% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Thin, soft scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Custom Prose styles */
+  .prose {
+    --prose-body: hsl(var(--foreground));
+    --prose-headings: hsl(var(--foreground));
+    --prose-lead: hsl(var(--muted-foreground));
+    --prose-links: hsl(var(--primary));
+    --prose-bold: hsl(var(--foreground));
+    --prose-counters: hsl(var(--muted-foreground));
+    --prose-bullets: hsl(var(--muted-foreground));
+    --prose-hr: hsl(var(--border));
+    --prose-quotes: hsl(var(--foreground));
+    --prose-quote-borders: hsl(var(--border));
+    --prose-captions: hsl(var(--muted-foreground));
+    --prose-code: hsl(var(--primary));
+    --prose-pre-code: hsl(var(--primary-foreground));
+    --prose-pre-bg: hsl(var(--foreground));
+    --prose-th-borders: hsl(var(--border));
+    --prose-td-borders: hsl(var(--border));
+  }
+
+  .dark .prose {
+    --prose-body: hsl(var(--foreground));
+    --prose-headings: hsl(var(--foreground));
+    --prose-lead: hsl(var(--muted-foreground));
+    --prose-links: hsl(var(--primary));
+    --prose-bold: hsl(var(--foreground));
+    --prose-counters: hsl(var(--muted-foreground));
+    --prose-bullets: hsl(var(--muted-foreground));
+    --prose-hr: hsl(var(--border));
+    --prose-quotes: hsl(var(--foreground));
+    --prose-quote-borders: hsl(var(--border));
+    --prose-captions: hsl(var(--muted-foreground));
+    --prose-code: hsl(var(--primary));
+    --prose-pre-code: hsl(var(--primary-foreground));
+    --prose-pre-bg: hsl(var(--accent));
+    --prose-th-borders: hsl(var(--border));
+    --prose-td-borders: hsl(var(--border));
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-headline;
+  }
+
+  .prose h1 {
+    @apply text-2xl font-bold mb-4 mt-6;
+  }
+
+  .prose h2 {
+    @apply text-xl font-semibold mb-3 mt-5;
+  }
+
+  .prose h3 {
+    @apply text-lg font-semibold mb-2 mt-4;
+  }
+
+  .prose ul {
+    @apply list-disc list-outside pl-5;
+  }
+
+  .prose ol {
+    @apply list-decimal list-outside pl-5;
+  }
+
+  .prose li {
+    @apply my-1;
+  }
+
+  .prose ul ul,
+  .prose ul ol,
+  .prose ol ul,
+  .prose ol ol {
+    @apply my-2 ml-4;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary bg-accent/30 dark:bg-accent/20 px-4 py-2 my-4 rounded-r-lg;
+  }
+
+  .prose blockquote p {
+    @apply text-base;
+  }
+
+  .prose a {
+    @apply text-primary hover:underline underline-offset-2 break-all;
+  }
+
+  .prose table {
+    @apply w-full my-4 text-sm;
+  }
+
+  .prose thead {
+    @apply border-b border-border;
+  }
+
+  .prose th {
+    @apply px-4 py-2 text-left font-semibold;
+  }
+
+  .prose tbody tr {
+    @apply border-b border-border/50;
+  }
+
+  .prose tbody tr:last-child {
+    @apply border-b-0;
+  }
+
+  .prose td {
+    @apply px-4 py-2 align-top;
+  }
+
+  .prose code:not(pre > code) {
+    @apply font-code text-sm font-normal bg-accent dark:bg-accent/50 text-primary rounded-sm px-1.5 py-0.5;
+  }
+
+  .user-message .prose {
+    --prose-links: hsl(var(--primary));
+    --prose-bold: hsl(var(--foreground));
+    --prose-code: hsl(var(--primary));
+    --prose-pre-code: hsl(var(--foreground));
+    --prose-pre-bg: hsl(var(--primary) / 0.2);
+    --prose-quote-borders: hsl(var(--primary));
+  }
+}
+
+.font-headline {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* From Uiverse.io by andrew-demchenk0, modified */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+}
+
+.switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(var(--brand-blue));
+  transition: .4s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  left: 3px;
+  bottom: 3px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+}
+
+.moon svg {
+  fill: hsl(var(--brand-blue));
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+}
+
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked+.slider {
+  background: linear-gradient(to right, hsl(var(--brand-blue)), hsl(var(--brand-purple)));
+}
+
+.dark .input:checked+.slider {
+  background: #183153;
+}
+
+
+.input:focus+.slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked+.slider:before {
+  transform: translateX(16px);
+}
